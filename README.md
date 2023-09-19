@@ -1,4 +1,3 @@
-<<<<<<< README.md
 # React Animation Sequencer Library
 Finally, a sequencer library to play animations in a row!
 
@@ -15,4 +14,3 @@ Built-in TypingEffect animation.
 Divs that have animations. Integrates with sequencer
 (as all divs need an update function)
 
->>>>>>> README.md
