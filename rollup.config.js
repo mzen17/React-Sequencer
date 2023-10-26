@@ -6,10 +6,10 @@ import terser from '@rollup/plugin-terser';
 export default [
 	{
 		input: [
-        'lib/index.ts',
-		'lib/components/AnimDiv.tsx', 
-		'lib/components/Sequencer.tsx', 
-		'lib/components/TypeEffect.tsx'], // Entry point of your application
+        'src/index.ts',
+		'src/components/AnimDiv.tsx', 
+		'src/components/Sequencer.tsx', 
+		'src/components/TypeEffect.tsx'], // Entry point of your application
 		output: {
 			dir: 'dist', // Output file in the dist folder
 			format: 'esm', // CommonJS format for Node.js

@@ -2,7 +2,7 @@
 // This code can be governed by the General Public License v3 or the StarlightX Public License, at your discretion.
 // For more details, read here: https://starlightx.io/licenses
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 interface SequencerProps {
   objects: React.ReactElement<any>[];
@@ -11,8 +11,8 @@ interface SequencerProps {
 }
 
 export const Sequencer = (props: SequencerProps) => {
-    const [sendObjects, setSendObjects] = useState<React.ReactElement<any>[]>([]);
-    const [currentIndex, setCurrentIndex] = useState(0); // Index of current object with respect to children
+    const [sendObjects, setSendObjects] = React.useState<React.ReactElement<any>[]>([]);
+    const [currentIndex, setCurrentIndex] = React.useState(0); // Index of current object with respect to children
   
     // Finish function (pass to children so they can tell parent when they finish)
     const finish = () => {
@@ -20,7 +20,7 @@ export const Sequencer = (props: SequencerProps) => {
     }
 
     // Hook to add objects to list when they are loaded.
-    useEffect(() => {
+    React.useEffect(() => {
         if(currentIndex < props.objects.length) {    
 
             // Add finish props

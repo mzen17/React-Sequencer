@@ -3,20 +3,20 @@
 // For more details, read here: https://starlightx.io/licenses
 
 // External Imports
-import { useState, useEffect } from 'react';
+import React from 'react';
 
 interface TypingEffectProps {
     text: string;
-    tailwind: string;
+    tailwind?: string;
     finish?: Function;
     textAnim: string;
     textdelay: number;
 }
 
 export const TypingEffect = ( props:TypingEffectProps ) => {
-  const [displayText, setDisplayText] = useState<string[]>([]);
+  const [displayText, setDisplayText] = React.useState<string[]>([]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     let currentIndex = 0;
     let timer: number;
     setDisplayText([]);
@@ -39,14 +39,16 @@ export const TypingEffect = ( props:TypingEffectProps ) => {
 
         } else {
             setDisplayText((prevDisplayText) => [...prevDisplayText, Current_String]);
-            props.finish!();
+            
         }
     };
+
+    typeNextCharacter();
 
     return () => {
       clearTimeout(timer);
     };
-  },);
+  },[]);
 
   // Return map with all the values
   return <div className={props.tailwind}>
