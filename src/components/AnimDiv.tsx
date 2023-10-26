@@ -3,7 +3,6 @@
 // For more details, read here: https://starlightx.io/licenses
 
 import React from "react";
-import { useState, useEffect } from "react";
 
 interface LandProps {
     children: React.ReactElement<any>[];
@@ -14,20 +13,20 @@ interface LandProps {
     anims: number;
 }
 
-export function AnimDiv (props: LandProps) {
+export default function AnimDiv (props: LandProps) {
 
       const tempFinish = () => {
         setFinished((prevCount) => prevCount + 1);
       }
 
-    const [finished, setFinished] = useState(0);
-    useEffect(() => {
+    const [finished, setFinished] = React.useState(0);
+    React.useEffect(() => {
         if(finished >= props.anims) { 
             setTimeout(() => {
-                props.finish!();
+               props.finish!();
             }, props.delay);
         }
-      }, [finished]);
+      });
 
     return (
         <div className= {props.preset + " " + props.tailwind}>
