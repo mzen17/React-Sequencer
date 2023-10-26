@@ -4,13 +4,25 @@
   "version": "0.0.3",
   "license": "SEE LICENSE IN LICENSE",
   "type": "module",
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
-    "build": "tsc",
+    "tsc": "tsc",
+    "build": "rollup -c",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
-    "react": "^18.2.0"
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "react": "^18.2.0",
+    "rollup": "^4.1.4"
   },
   "devDependencies": {
     "@types/react": "^18.2.14",
